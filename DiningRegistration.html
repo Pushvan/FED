@@ -1,0 +1,64 @@
+<head>
+        <title>Dining Registration</title>
+        <script>
+            function validateForm()
+            {
+                var a=document.forms["f1"]["Vname"].value;
+                var b=document.forms["f1"]["members"].value;
+                var c=document.forms["f1"]["phone"].value;
+                var d=document.forms["f1"]["email"].value;
+                var e=document.forms["f1"]["status"].value;
+                var f=document.forms["f1"]["venue"].value;
+                var g=document.forms["f1"]["cb"].value;
+                if(a=='' || b=='' || c=='' || d=='' || e=='' || f==''||cb==''  )
+                {
+                    alert("fill all the required fields");
+                    return false;
+                }
+                var l=document.forms["f1"]["Vname"].value.length;
+                if(l>20)
+                {
+                    alert("Reenter your name as length of your name is greater than 20");
+                    return false;
+                }
+                var num=document.forms["f1"]["phone"].value.length;
+                if(num<10)
+                {
+                    alert("Reenter your phonw number with 10 digits");
+                    return false;
+                }
+               
+            }
+        </script>
+    </head>
+    <body>
+        <h4 align="center">Dine Booking</h4>
+        <form name="f1" align="center" onsubmit="return validateForm()" >
+          Visitor Name:  <input type="text" name="Vname"><br>
+          Number of members: <input type="number" name="members" min="1" max="2"><br>
+          Contact no: <input type="tel" id="phone" name="phone" pattern="[0-9]{10}"><br>
+          Email: <input type="email" id="email"><br>
+          Type of food:
+          <input type="checkbox" id="food1" value="South" name="cb" >South Indian
+          <input type="checkbox" id="food2" value="North" name="cb">North Indian
+          <input type="checkbox" id="food3" value="Chinese" name="cb">Chinese
+          <input type="checkbox" id="food4" value="Western" name="cb">Western<br>
+          Room Status:
+          <input type="radio" name="status" value="AC"> AC
+          <input type="radio" name="status" value="Non-AC">Non-AC<br>
+          Venue Preference:
+          <select name="venue" id="venue">
+            <option value="none" selected disabled hidden>Amoeba</option>
+            <option value="Arena">Arena</option>
+            <option value="Fiesta">Fiesta</option>
+            <option value="Vista">Vista</option>
+            <option value="Mythri">Mythri</option>
+            <option value="Magna">Magna</option>
+            <option value="Oasis">Oasis</option>
+          </select>
+          <br>
+          <input type="submit" value="Book">
+          <input type="reset" value="Reset">
+        </form>
+    </body>
+</html>
